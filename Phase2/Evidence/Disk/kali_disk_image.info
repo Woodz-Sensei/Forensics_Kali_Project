@@ -1,0 +1,154 @@
+
+GUYMAGER ACQUISITION INFO FILE
+==============================
+
+Guymager
+========
+
+Version            : 0.8.13-3                                                                                    
+Version timestamp  : 2026-02-28-16.44.25 UTC                                                                     
+Compiled with      : gcc 15.2.0                                                                                  
+libewf version     : 20140816 (not used as Guymager is configured to use its own EWF module)                     
+libguytools version: 2.1.0                                                                                       
+Host name          : kali                                                                                        
+Domain name        : (none)                                                                                      
+System             : Linux kali 6.19.11+kali-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.19.11-1kali1 (2026-04-09) x86_64
+
+
+Device information
+==================
+Command executed: bash -c "search="`basename /dev/sda`: H..t P.......d A..a de.....d" && dmesg | grep -A3 "$search" || echo "No kernel HPA messages for /dev/sda""
+Information returned:
+----------------------------------------------------------------------------------------------------
+   No kernel HPA messages for /dev/sda
+
+Command executed: bash -c "smartctl -s on /dev/sda ; smartctl -a /dev/sda"
+Information returned:
+----------------------------------------------------------------------------------------------------
+   smartctl 7.5 2025-04-30 r5714 [x86_64-linux-6.19.11+kali-amd64] (local build)
+   Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+   
+   SMART support is: Unavailable - device lacks SMART capability.
+   A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.
+   smartctl 7.5 2025-04-30 r5714 [x86_64-linux-6.19.11+kali-amd64] (local build)
+   Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+   
+   === START OF INFORMATION SECTION ===
+   Device Model:     VBOX HARDDISK
+   Serial Number:    VBecd7fcb4-7daa127f
+   Firmware Version: 1.0
+   User Capacity:    42,949,672,960 bytes [42.9 GB]
+   Sector Size:      512 bytes logical/physical
+   Device is:        Not in smartctl database 7.5/5706
+   ATA Version is:   ATA/ATAPI-6 published, ANSI INCITS 361-2002
+   Local Time is:    Sat May  2 16:12:08 2026 EDT
+   SMART support is: Unavailable - device lacks SMART capability.
+   
+   A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.
+
+Command executed: bash -c "hdparm -I /dev/sda"
+Information returned:
+----------------------------------------------------------------------------------------------------
+   /dev/sda:
+   
+   ATA device, with non-removable media
+   	Model Number:       VBOX HARDDISK                           
+   	Serial Number:      VBecd7fcb4-7daa127f 
+   	Firmware Revision:  1.0     
+   Standards:
+   	Used: ATA/ATAPI-6 published, ANSI INCITS 361-2002 
+   	Supported: 6 5 4 
+   Configuration:
+   	Logical		max	current
+   	cylinders	16383	16383
+   	heads		16	16
+   	sectors/track	63	63
+   	--
+   	CHS current addressable sectors:    16514064
+   	LBA    user addressable sectors:    83886080
+   	LBA48  user addressable sectors:    83886080
+   	Logical/Physical Sector size:           512 bytes
+   	device size with M = 1024*1024:       40960 MBytes
+   	device size with M = 1000*1000:       42949 MBytes (42 GB)
+   	cache/buffer size  = 256 KBytes (type=DualPortCache)
+   Capabilities:
+   	LBA, IORDY(cannot be disabled)
+   	Queue depth: 32
+   	Standby timer values: spec'd by Vendor, no device specific minimum
+   	R/W multiple sector transfer: Max = 128	Current = 128
+   	DMA: mdma0 mdma1 mdma2 udma0 udma1 udma2 udma3 udma4 udma5 *udma6 
+   	     Cycle time: min=120ns recommended=120ns
+   	PIO: pio0 pio1 pio2 pio3 pio4 
+   	     Cycle time: no flow control=120ns  IORDY flow control=120ns
+   Commands/features:
+   	Enabled	Supported:
+   	   *	Power Management feature set
+   	   *	Write cache
+   	   *	Look-ahead
+   	   *	48-bit Address feature set
+   	   *	Mandatory FLUSH_CACHE
+   	   *	FLUSH_CACHE_EXT
+   	   *	Gen2 signaling speed (3.0Gb/s)
+   	   *	Native Command Queueing (NCQ)
+   Checksum: correct
+
+Command executed: bash -c "CIDFILE=/sys/block/$(basename /dev/sda)/device/cid; echo -n "CID: " ; if [ -e $CIDFILE ] ; then cat $CIDFILE  ; else echo "not available" ; fi "
+Information returned:
+----------------------------------------------------------------------------------------------------
+   CID: not available
+
+Hidden areas: unknown
+
+
+Acquisition
+===========
+
+Linux device            : /dev/sda                                                              
+Device size             : 42949672960 (42.9GB)                                                  
+Format                  : Expert Witness Format, sub-format Guymager - file extension is .Exx   
+Image meta data         
+   Case number          : Phase2-Case01
+                                                        
+   Evidence number      : E01                                                                   
+   Examiner             : Adolfo Javier                                                         
+   Description          : Disk image of Kali Linux VM acquired for Phase 2 forensic assignment.
+
+   Notes                : VBecd7fcb4-7daa127f                                                   
+Image path and file name: /media/sf_Desktop/ForensicsLab/Evidence/disk/kali_disk_image.Exx      
+Info  path and file name: /media/sf_Desktop/ForensicsLab/Evidence/disk/kali_disk_image.info     
+Hash calculation        : MD5 and SHA-256                                                       
+Source verification     : off                                                                   
+Image verification      : on                                                                    
+
+No bad sectors encountered during acquisition.
+State: Finished successfully
+
+MD5 hash                   : 82a022bfed3fff6800693947f058378f                                
+MD5 hash verified source   : --                                                              
+MD5 hash verified image    : 82a022bfed3fff6800693947f058378f                                
+SHA1 hash                  : --                                                              
+SHA1 hash verified source  : --                                                              
+SHA1 hash verified image   : --                                                              
+SHA256 hash                : f60bba51c5e743c41eac77c8af068df3257de53fd5ac71686bf1cb98739ab992
+SHA256 hash verified source: --                                                              
+SHA256 hash verified image : f60bba51c5e743c41eac77c8af068df3257de53fd5ac71686bf1cb98739ab992
+Image verification OK. The image contains exactly the data that was written.
+
+Acquisition started : 2026-05-02 16:12:07 (ISO format YYYY-MM-DD HH:MM:SS)    
+Verification started: 2026-05-02 16:21:21                                     
+Ended               : 2026-05-02 16:30:20 (0 hours, 18 minutes and 12 seconds)
+Acquisition speed   : 74.07 MByte/s (0 hours, 9 minutes and 13 seconds)       
+Verification speed  : 76.13 MByte/s (0 hours, 8 minutes and 58 seconds)       
+
+
+Generated image files and their MD5 hashes
+==========================================
+
+No MD5 hashes available (configuration parameter CalcImageFileMD5 is off)
+MD5                               Image file
+n/a                               kali_disk_image.E01
+n/a                               kali_disk_image.E02
+n/a                               kali_disk_image.E03
+n/a                               kali_disk_image.E04
+n/a                               kali_disk_image.E05
+n/a                               kali_disk_image.E06
